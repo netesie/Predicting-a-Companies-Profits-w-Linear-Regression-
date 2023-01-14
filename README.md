@@ -136,3 +136,43 @@ plt.ylabel('Predicted Profit')
 ```
 
 ![](https://github.com/netesie/Predicting-a-Companies-Profits-w-Linear-Regression-/blob/main/model%20v%20test%20set.png " Model vs Test Set ")
+
+### R Squared  and Adjusted R Squared of Test Set 
+
+```
+# Calculating the R squared value to see if its around .80 or above to see that this is a valid model
+# This means that 89% of the variation in the response (dependent) variable can be explained... 
+# ...by the predictor variables in the model.
+
+r2_score(y_test, y_pred_test)
+```
+0.8985038788872521
+
+```
+# Calculate adjusted R2 of the train set so multiple predictors dont skew the R2
+# Adj r2 = 1-(1-R2)*(n-1)/(n-p-1)
+
+Adj_r2 = 1-(1-0.8985038788872521)*(200-1)/(200-2-1)
+
+Adj_r2
+```
+0.8974734614140263
+
+### Model Validation (Residual Analysis) 
+
+```
+residuals = y_test-y_pred_test
+
+sns.regplot(x = y_pred_test, y = residuals, data = None, scatter = True, color = 'red')
+```
+![](https://github.com/netesie/Predicting-a-Companies-Profits-w-Linear-Regression-/blob/main/Residual%20Plot.png " Residual Plot ")
+
+As we can see our Residual Plot doesnt vary too much at all and are all clusteered around one line 
+
+### Conclusion
+
+Profit at this company is closely correlated to putting money into R&D and Market spend. Now we can safely predict profits based on how much money we put into each department.
+
+
+
+
