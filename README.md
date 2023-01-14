@@ -101,10 +101,11 @@ m = lr.coef_
 print (m)
 
 ```
-```
-# Now we know the training is done after checking the Y intercept value and the regression coefficients  
+Now we know the training is done after checking the Y intercept value and the regression coefficients 
 
-#Next we try to predict the 'Profit' with our model using the training set
+Next we try to predict the 'Profit' with our model using the training set
+
+```
 y_pred_train = lr.predict(X_train)
 y_pred_train
 
@@ -114,4 +115,24 @@ plt.scatter(y_train, y_pred_train)
 plt.xlabel('Actual Profit')
 plt.ylabel('Predicted Profit')
 ```
+![](https://github.com/netesie/Predicting-a-Companies-Profits-w-Linear-Regression-/blob/main/model%20v%20train%20set.png " Model vs Train Set ")
+```
+# R2 score of the training set
+r2_score(y_train, y_pred_train)
+```
+0.9458030630681264
 
+### Testing the Model
+
+```
+# Now we use the testing data to test the model and see its ability to generalize
+y_pred_test = lr.predict(X_test)
+
+#Now check again to see how well the model predicts by ...
+#...setting up a scatter plot and looking at the correlation.
+plt.scatter(y_test, y_pred_test)
+plt.xlabel('Actual Profit')   
+plt.ylabel('Predicted Profit')
+```
+
+![](https://github.com/netesie/Predicting-a-Companies-Profits-w-Linear-Regression-/blob/main/model%20v%20test%20set.png " Model vs Test Set ")
