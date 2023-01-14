@@ -34,7 +34,7 @@ I put color map 'cmap' color scheme that works for me and I added annotation 'an
 ```
 sns.heatmap(companies.corr(),cmap="YlGnBu",annot=True)
 ```
-https://github.com/netesie/Predicting-a-Companies-Profits-w-Linear-Regression-/blob/main/heatmap.png
+![](https://github.com/netesie/Predicting-a-Companies-Profits-w-Linear-Regression-/blob/main/heatmap.png "Correlation Heatmap")
 
 
 If you look at where 'R&D Spend' and 'Marketing Spend' meets you'll notice a value of .98. Any value over .90 between 2 indepenent values is NOT a good thing. It's called multicollinearity and can ruin the acuracy of a model and introduce bias. In order to account for this we can add those 2 variables together or get rid of one. We'll get rid of them.
